@@ -39,6 +39,7 @@ class LogControl(Operation):
         state = kwargs.get("state")
         train_loss = None
         if state is not None and len(state.log_history) > 0:
+            print(state)
             train_loss = state.log_history[-1]["loss"]
         epoch_int = 0 if state is None else int(state.epoch)
         log_format_string = self.kwargs.get("log-format")
